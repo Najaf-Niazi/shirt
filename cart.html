@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Your Cart | Apni Shirt</title>
+
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/script.js" defer></script>
+</head>
+<style>
+    /* =========================
+   CART PAGE
+================================ */
+
+.cart-intro {
+  padding: 40px 0 50px;
+  background: var(--cream);
+}
+
+.cart-intro h1 {
+  margin-bottom: 15px;
+  font-size: clamp(34px, 5vw, 52px);
+  font-weight: 500;
+}
+
+.cart-intro .container > p:last-child {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.cart-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 340px;
+  align-items: start;
+  gap: 35px;
+}
+
+.cart-products {
+  min-width: 0;
+}
+
+.cart-section-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  margin-bottom: 12px;
+}
+
+.cart-section-heading h2 {
+  font-size: 29px;
+  font-weight: 500;
+}
+
+.cart-section-heading > span {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.cart-demo-note {
+  margin-bottom: 22px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.cart-items {
+  border-top: 1px solid var(--border);
+}
+
+.cart-item {
+  display: grid;
+  grid-template-columns: 115px minmax(0, 1fr) auto;
+  align-items: start;
+  gap: 22px;
+  padding-block: 25px;
+  border-bottom: 1px solid var(--border);
+}
+
+.cart-item-image {
+  overflow: hidden;
+  background: var(--light);
+  border-radius: var(--radius);
+}
+
+.cart-item-image img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  height: auto;
+  object-fit: cover;
+}
+
+.cart-item-info {
+  min-width: 0;
+}
+
+.cart-item-info h3 {
+  margin-bottom: 10px;
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+.cart-item-info h3 a:hover {
+  color: var(--gold);
+}
+
+.cart-item-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px 8px;
+  margin-bottom: 9px;
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.cart-item-options strong {
+  color: var(--text);
+  font-weight: 500;
+}
+
+.cart-unit-price {
+  margin-bottom: 16px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.cart-quantity {
+  display: inline-flex;
+  align-items: center;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+.quantity-btn {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  color: var(--navy);
+  background: var(--light);
+  border: 0;
+  border-radius: 0;
+  font-size: 18px;
+}
+
+.quantity-btn:hover {
+  background: var(--cream);
+}
+
+.quantity-btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.45;
+}
+
+.quantity-value {
+  min-width: 35px;
+  text-align: center;
+  font-size: 13px;
+}
+
+.cart-item-actions {
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.cart-item-total {
+  color: var(--navy);
+  font-size: 15px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.remove-item,
+.clear-cart-btn {
+  min-height: 36px;
+  padding: 5px 0;
+  color: #914838;
+  background: transparent;
+  border: 0;
+  font-size: 12px;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.cart-bottom-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  margin-top: 22px;
+}
+
+/* ORDER SUMMARY */
+
+.cart-summary {
+  padding: 28px;
+  background: var(--light);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+.cart-summary .eyebrow {
+  font-size: 9px;
+}
+
+.cart-summary h2 {
+  margin-bottom: 28px;
+  font-size: 27px;
+  font-weight: 500;
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  margin-bottom: 18px;
+  font-size: 13px;
+}
+
+.summary-row > span:last-child {
+  text-align: right;
+}
+
+.summary-total {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  margin-top: 24px;
+  padding-top: 23px;
+  border-top: 1px solid var(--border);
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.summary-note {
+  margin-top: 15px;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.8;
+}
+
+.cart-checkout-btn {
+  width: 100%;
+  margin-top: 25px;
+  padding-inline: 12px;
+  font-size: 12px;
+}
+
+.checkout-demo-note {
+  margin-top: 14px;
+  color: var(--muted);
+  font-size: 10px;
+  text-align: center;
+}
+
+/* EMPTY CART */
+
+.cart-empty {
+  padding: 65px 20px;
+  background: var(--light);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  text-align: center;
+}
+
+.cart-empty-icon {
+  display: grid;
+  place-items: center;
+  width: 75px;
+  height: 75px;
+  margin: 0 auto 22px;
+  color: var(--gold);
+  background: var(--cream);
+  border-radius: 50%;
+  font-size: 35px;
+}
+
+.cart-empty h2 {
+  margin-bottom: 16px;
+  font-size: 33px;
+  font-weight: 500;
+}
+
+.cart-empty p {
+  margin-bottom: 25px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 1000px) {
+  .cart-layout {
+    grid-template-columns: minmax(0, 1fr) 300px;
+    gap: 24px;
+  }
+
+  .cart-item {
+    grid-template-columns: 90px minmax(0, 1fr);
+    gap: 16px;
+  }
+
+  .cart-item-actions {
+    grid-column: 2;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    gap: 15px;
+  }
+
+  .cart-summary {
+    padding: 22px;
+  }
+}
+
+@media (max-width: 750px) {
+  .cart-layout {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+  .cart-summary {
+    width: 100%;
+  }
+
+  .cart-item {
+    grid-template-columns: 115px minmax(0, 1fr) auto;
+    gap: 20px;
+  }
+
+  .cart-item-actions {
+    grid-column: auto;
+    align-items: flex-end;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 500px) {
+  .cart-intro {
+    padding-block: 30px 35px;
+  }
+
+  .cart-section-heading h2 {
+    font-size: 25px;
+  }
+
+  .cart-item {
+    grid-template-columns: 85px minmax(0, 1fr);
+    gap: 15px;
+    padding-block: 20px;
+  }
+
+  .cart-item-info h3 {
+    font-size: 14px;
+  }
+
+  .cart-item-options {
+    font-size: 10px;
+  }
+
+  .cart-item-actions {
+    grid-column: 2;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .cart-item-total {
+    font-size: 14px;
+  }
+
+  .cart-bottom-actions {
+    flex-wrap: wrap;
+  }
+
+  .cart-summary {
+    padding: 24px 20px;
+  }
+
+  .cart-empty h2 {
+    font-size: 28px;
+  }
+}
+</style>
+<body id="top" data-page="cart">
+
+  
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container header-content">
+
+      <a href="index.html" class="logo">
+        Apni<span>Shirt</span>
+      </a>
+
+      <button
+        type="button"
+        class="menu-toggle"
+        id="menuToggle"
+        aria-label="Toggle navigation"
+        aria-controls="mainNav"
+        aria-expanded="false"
+        hidden
+      >☰</button>
+
+      <nav class="main-nav" id="mainNav" aria-label="Main navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="shop.html" class="nav-link">Shop</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="index.html#contact" class="nav-link">Contact</a>
+      </nav>
+
+      <form
+        class="search-form"
+        id="searchForm"
+        action="shop.html"
+        method="get"
+        role="search"
+      >
+        <label for="searchInput">Search shirts</label>
+
+        <div class="search-field">
+          <input
+            type="search"
+            id="searchInput"
+            name="q"
+            placeholder="Search for shirts..."
+            maxlength="100"
+          >
+          <button type="submit">Search</button>
+        </div>
+      </form>
+
+      <a href="cart.html" class="cart-link" aria-current="page">
+        Cart
+        <span id="cartCount" aria-live="polite">0</span>
+      </a>
+
+    </div>
+  </header>
+
+  <main>
+
+    <!-- PAGE HEADING -->
+    <section class="cart-intro">
+      <div class="container" data-animate="fade-up">
+
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html">Home</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">Cart</span>
+        </nav>
+
+        <p class="eyebrow">YOUR SELECTED STYLES</p>
+        <h1>Your Shopping Bag</h1>
+        <p>Review your shirts before continuing to checkout.</p>
+
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+
+        <!-- JS cart empty hone par yeh show karega -->
+        <div class="cart-empty" id="emptyCart" hidden>
+          <span class="cart-empty-icon" aria-hidden="true">＋</span>
+          <h2>Your bag is empty</h2>
+          <p>Find a shirt you love and add it to your bag.</p>
+          <a href="shop.html" class="btn btn-primary">
+            Explore Shirts →
+          </a>
+        </div>
+
+        <!-- FILLED CART -->
+        <div class="cart-layout" id="cartContent">
+
+          <section class="cart-products" aria-labelledby="bagHeading">
+
+            <div class="cart-section-heading">
+              <h2 id="bagHeading">Bag Items</h2>
+              <span id="cartItemCount" aria-live="polite">
+                2 demo items
+              </span>
+            </div>
+
+            <p class="cart-demo-note" id="cartDemoNote">
+              Sample items for layout preview. JavaScript will replace
+              these with your saved cart.
+            </p>
+
+            <!-- JS isi container mein actual items dikhaye -->
+            <div class="cart-items" id="cartItems">
+
+              <!-- DEMO ITEM 1 -->
+              <article
+                class="cart-item"
+                data-cart-key="1-M-olive"
+                data-product-id="1"
+                data-size="M"
+                data-colour="olive"
+                data-price="4290"
+                data-animate="fade-up"
+              >
+                <a href="product.html?id=1" class="cart-item-image">
+                  <img
+                    src="images/shirts/shirt-01.jpg"
+                    alt="Olive Classic Oxford Shirt"
+                    width="180"
+                    height="220"
+                  >
+                </a>
+
+                <div class="cart-item-info">
+                  <p class="product-category">Casual</p>
+
+                  <h3>
+                    <a href="product.html?id=1">
+                      Classic Oxford Shirt
+                    </a>
+                  </h3>
+
+                  <p class="cart-item-options">
+                    Size: <strong>M</strong>
+                    <span aria-hidden="true">|</span>
+                    Colour: <strong>Olive</strong>
+                  </p>
+
+                  <p class="cart-unit-price">Rs. 4,290 each</p>
+
+                  <div class="cart-quantity"
+                       role="group"
+                       aria-label="Classic Oxford Shirt quantity">
+
+                    <button
+                      type="button"
+                      class="quantity-btn"
+                      data-action="decrease"
+                      aria-label="Decrease Classic Oxford Shirt quantity"
+                    >−</button>
+
+                    <span class="quantity-value">1</span>
+
+                    <button
+                      type="button"
+                      class="quantity-btn"
+                      data-action="increase"
+                      aria-label="Increase Classic Oxford Shirt quantity"
+                    >+</button>
+
+                  </div>
+                </div>
+
+                <div class="cart-item-actions">
+                  <p class="cart-item-total">Rs. 4,290</p>
+
+                  <button
+                    type="button"
+                    class="remove-item"
+                    data-action="remove"
+                    aria-label="Remove Classic Oxford Shirt from cart"
+                  >
+                    Remove
+                  </button>
+                </div>
+              </article>
+
+              <!-- DEMO ITEM 2 -->
+              <article
+                class="cart-item"
+                data-cart-key="2-L-blue"
+                data-product-id="2"
+                data-size="L"
+                data-colour="blue"
+                data-price="4990"
+                data-animate="fade-up"
+              >
+                <a href="product.html?id=2" class="cart-item-image">
+                  <img
+                    src="images/shirts/shirt-02.jpg"
+                    alt="Blue Premium Linen Shirt"
+                    width="180"
+                    height="220"
+                  >
+                </a>
+
+                <div class="cart-item-info">
+                  <p class="product-category">Linen</p>
+
+                  <h3>
+                    <a href="product.html?id=2">
+                      Premium Linen Shirt
+                    </a>
+                  </h3>
+
+                  <p class="cart-item-options">
+                    Size: <strong>L</strong>
+                    <span aria-hidden="true">|</span>
+                    Colour: <strong>Blue</strong>
+                  </p>
+
+                  <p class="cart-unit-price">Rs. 4,990 each</p>
+
+                  <div class="cart-quantity"
+                       role="group"
+                       aria-label="Premium Linen Shirt quantity">
+
+                    <button
+                      type="button"
+                      class="quantity-btn"
+                      data-action="decrease"
+                      aria-label="Decrease Premium Linen Shirt quantity"
+                    >−</button>
+
+                    <span class="quantity-value">1</span>
+
+                    <button
+                      type="button"
+                      class="quantity-btn"
+                      data-action="increase"
+                      aria-label="Increase Premium Linen Shirt quantity"
+                    >+</button>
+
+                  </div>
+                </div>
+
+                <div class="cart-item-actions">
+                  <p class="cart-item-total">Rs. 4,990</p>
+
+                  <button
+                    type="button"
+                    class="remove-item"
+                    data-action="remove"
+                    aria-label="Remove Premium Linen Shirt from cart"
+                  >
+                    Remove
+                  </button>
+                </div>
+              </article>
+
+            </div>
+
+            <div class="cart-bottom-actions">
+              <a href="shop.html" class="text-link">
+                ← Continue Shopping
+              </a>
+
+              <button
+                type="button"
+                class="clear-cart-btn"
+                id="clearCartBtn"
+              >
+                Clear Bag
+              </button>
+            </div>
+
+          </section>
+
+          <!-- ORDER SUMMARY -->
+          <aside class="cart-summary" aria-labelledby="summaryHeading">
+            <p class="eyebrow">ONE STEP CLOSER</p>
+            <h2 id="summaryHeading">Order Summary</h2>
+
+            <div class="summary-row">
+              <span>Subtotal</span>
+              <span id="cartSubtotal">Rs. 9,280</span>
+            </div>
+
+            <div class="summary-row">
+              <span>Delivery</span>
+              <span>Not configured</span>
+            </div>
+
+            <div class="summary-total">
+              <span>Demo Total</span>
+              <span id="cartTotal" aria-live="polite">Rs. 9,280</span>
+            </div>
+
+            <p class="summary-note">
+              This demo total includes products only.
+              Delivery and taxes are not calculated.
+            </p>
+
+            <a
+              href="checkout.html"
+              class="btn btn-primary cart-checkout-btn"
+              id="checkoutBtn"
+            >
+              Continue to Checkout →
+            </a>
+
+            <p class="checkout-demo-note">
+              Demo checkout only. No real payment is taken.
+            </p>
+          </aside>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer" id="contact">
+    <div class="container footer-grid">
+
+      <div class="footer-brand">
+        <a href="index.html" class="logo">
+          Apni<span>Shirt</span>
+        </a>
+        <p>Style for every day.</p>
+        <p>Demo store — sample products and prices.</p>
+      </div>
+
+      <div class="footer-column">
+        <h2>Collection</h2>
+        <ul>
+          <li><a href="shop.html">All Shirts</a></li>
+          <li><a href="shop.html?category=casual">Casual</a></li>
+          <li><a href="shop.html?category=formal">Formal</a></li>
+          <li><a href="shop.html?category=linen">Linen</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h2>Explore</h2>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="cart.html" aria-current="page">Your Cart</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h2>Project Details</h2>
+        <p>Built with HTML, CSS and JavaScript.</p>
+        <p>No real payments are processed.</p>
+      </div>
+
+    </div>
+
+   
+  </footer>
+
+  <div
+    id="toast"
+    class="toast"
+    role="status"
+    aria-live="polite"
+    hidden
+  ></div>
+    <script src="js/script.js" defer></script>
+
+</body>
+</html>

@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Shop Shirts | Apni Shirt</title>
+  <meta
+    name="description"
+    content="Explore 24 casual, formal and linen shirts at Apni Shirt."
+  >
+
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/script.js" defer></script>
+</head>
+
+<body id="top" data-page="shop">
+
+  <!-- TOP BAR -->
+  <div class="top-bar">
+    <div class="container">
+      <p>APNI SHIRT — STYLE FOR EVERY DAY</p>
+      <p>Frontend demo store</p>
+    </div>
+  </div>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container header-content">
+
+      <a href="index.html" class="logo" aria-label="Apni Shirt home">
+        Apni<span>Shirt</span>
+      </a>
+
+      <button
+        type="button"
+        class="menu-toggle"
+        id="menuToggle"
+        aria-label="Toggle navigation"
+        aria-controls="mainNav"
+        aria-expanded="false"
+        hidden
+      >
+        ☰
+      </button>
+
+      <nav class="main-nav" id="mainNav" aria-label="Main navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a
+          href="shop.html"
+          class="nav-link active"
+          aria-current="page"
+        >
+          Shop
+        </a>
+<a href="index.html#about" class="nav-link">About</a>
+  <a href="index.html#contact" class="nav-link">Contact</a>      </nav>
+
+      <form
+        class="search-form"
+        id="searchForm"
+        action="shop.html"
+        method="get"
+        role="search"
+      >
+        <label for="searchInput">Search shirts</label>
+
+        <div class="search-field">
+          <input
+            type="search"
+            id="searchInput"
+            name="q"
+            placeholder="Search for shirts..."
+            maxlength="100"
+          >
+          <button type="submit">Search</button>
+        </div>
+      </form>
+
+      <a href="cart.html" class="cart-link">
+        Cart
+        <span id="cartCount" aria-live="polite">0</span>
+      </a>
+
+    </div>
+  </header>
+
+  <main>
+
+    <!-- PAGE INTRO -->
+    <section class="shop-intro">
+      <div class="container" data-animate="fade-up">
+
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html">Home</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">Shop</span>
+        </nav>
+
+        <p class="eyebrow">FIND YOUR EVERYDAY STYLE</p>
+        <h1>Our Shirt Collection</h1>
+        <p>Explore casual favourites, formal essentials and relaxed linen.</p>
+
+      </div>
+    </section>
+
+    <!-- COLLECTION -->
+    <section class="section shop-section" aria-labelledby="collectionHeading">
+      <div class="container">
+
+        <div class="section-heading">
+          <div>
+            <h2 id="collectionHeading">Explore Shirts</h2>
+            <p class="demo-note">Sample products and prices.</p>
+          </div>
+
+          <p id="productCount" role="status" aria-live="polite">
+            24 shirts
+          </p>
+        </div>
+
+        <!-- FILTERS -->
+        <div class="shop-toolbar">
+
+          <div
+            class="category-filters"
+            id="categoryFilters"
+            role="group"
+            aria-label="Filter shirts by category"
+          >
+            <button
+              type="button"
+              class="filter-btn active"
+              data-category="all"
+              aria-pressed="true"
+            >All Shirts</button>
+
+            <button
+              type="button"
+              class="filter-btn"
+              data-category="casual"
+              aria-pressed="false"
+            >Casual</button>
+
+            <button
+              type="button"
+              class="filter-btn"
+              data-category="formal"
+              aria-pressed="false"
+            >Formal</button>
+
+            <button
+              type="button"
+              class="filter-btn"
+              data-category="linen"
+              aria-pressed="false"
+            >Linen</button>
+          </div>
+
+          <div class="sort-control">
+            <label for="sortSelect">Sort by</label>
+            <select id="sortSelect" name="sort">
+              <option value="featured">Featured</option>
+              <option value="price-asc">Price: Low to High</option>
+              <option value="price-desc">Price: High to Low</option>
+              <option value="name-asc">Name: A–Z</option>
+            </select>
+          </div>
+
+        </div>
+
+        <!-- EMPTY SEARCH RESULT -->
+        <div class="empty-state" id="noResults" hidden>
+          <h3>No shirts found</h3>
+          <p>Try another search or clear your filters.</p>
+          <button type="button" class="btn btn-primary" id="resetFilters">
+            Clear Search & Filters
+          </button>
+        </div>
+
+        <!-- ALL 24 PRODUCTS -->
+        <div class="product-grid shop-product-grid" id="productGrid">
+
+          <!-- CASUAL: 1–8 -->
+
+          <article class="product-card"
+            data-product-id="1" data-name="Classic Oxford Shirt"
+            data-category="casual" data-price="4290" data-animate="fade-up">
+            <a href="product.html?id=1" class="product-image">
+             
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSj1cOYxcZROV6YJsC2-jdSoUFKiUpshthbqjbU91BIbQ&s=10s"
+                alt="Olive green Oxford shirt" width="450" height="550">
+            </a>
+            <div class="product-info">
+              <p class="product-category">Casual</p>
+              <h3><a href="product.html?id=1">Classic Oxford Shirt</a></h3>
+              <p class="product-price">Rs. 4,290</p>
+              <a href="card.html?id=1" class="btn btn-product">Choose Options</a>
+            </div>
+          </article>
+
+          <article class="product-card"
+            data-product-id="2" data-name="Premium Linen Shirt"
+            data-category="linen" data-price="4990" data-animate="fade-up">
+            <a href="product.html?id=2" class="product-image">
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUmZFUUGjThiHJCvLF19lemMimNJ7mUPiBTAoSSUd-yw&s=10"
+                alt="Light blue linen shirt" width="450" height="550">
+            </a>
+            <div class="product-info">
+              <p class="product-category">Linen</p>
+              <h3><a href="product.html?id=2">Premium Linen Shirt</a></h3>
+              <p class="product-price">Rs. 4,990</p>
+              <a href="card.html?id=2" class="btn btn-product">Choose Options</a>
+            </div>
+          </article>
+
+          <article class="product-card"
+            data-product-id="3" data-name="Slim Fit Casual Shirt"
+            data-category="casual" data-price="3990" data-animate="fade-up">
+            <a href="product.html?id=3" class="product-image">
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrX5ocyjEIi_3kvJd4ZH8RRhKXLdVaPGIBzzlW5fYyWv-oN_AP272NlUO9&s=10"
+                alt="Black slim fit casual shirt" width="450" height="550">
+            </a>
+            <div class="product-info">
+              <p class="product-category">Casual</p>
+              <h3><a href="product.html?id=3">Slim Fit Casual Shirt</a></h3>
+              <p class="product-price">Rs. 3,990</p>
+              <a href="card.html?id=3" class="btn btn-product">Choose Options</a>
+            </div>
+          </article>
+
+          <article class="product-card"
+            data-product-id="4" data-name="Solid Cotton Shirt"
+            data-category="formal" data-price="4490" data-animate="fade-up">
+            <a href="product.html?id=4" class="product-image">
+              <img src="https://filohevis.com/cdn/shop/files/white_shirt_for_men.webp?v=1789709171&width=2048"
+                alt="White formal cotton shirt" width="450" height="550">
+            </a>
+            <div class="product-info">
+              <p class="product-category">Formal</p>
+              <h3><a href="product.html?id=4">Solid Cotton Shirt</a></h3>
+              <p class="product-price">Rs. 4,490</p>
+              <a href="card.html?id=4" class="btn btn-product">Choose Options</a>
+            </div>
+          </article>
+
+          <article class="product-card"
+            data-product-id="5" data-name="Checked Flannel Shirt"
+            data-category="casual" data-price="4290" data-animate="fade-up">
+            <a href="product.html?id=5" class="product-image">
+              <img src="https://shopbrumano.com/cdn/shop/files/Navy-blue-tartan-plaid-checkered-casual-shirt-junior-Brumano-Pakistan1_49a8f4e2-5718-4279-8d68-da3d3becc445.jpg?format=webp&v=1786358190&width=1080"
+                alt="Navy checked flannel shirt" width="450" height="550"
+                loading="lazy">
+            </a>
+            <div class="product-info">
+              <p class="product-category">Casual</p>
+              <h3><a href="product.html?id=5">Checked Flannel Shirt</a></h3>
+              <p class="product-price">Rs. 4,290</p>
+              <a href="card.html?id=5" class="btn btn-product">Choose Options</a>
+            </div>
+          </article>
+
+          <article class="product-card"
+            data-product-id="6" data-name="Textured Casual Shirt"
+            data-category="casual" data-price="3990" data-animate="fade-up">
+            <a href="product.html?id=6" class="product-image">
+              <img src="https://diners.com.pk/cdn/shop/files/AD25197-FAWN-01_grande.webp?v=1747913988"
+                alt="Beige textured casual shirt" width="450" height="550"
+                loading="lazy">
+            </a>
+            <div class="product-info">
+              <p class="product-category">Casual</p>
+              <h3><a href="product.html?id=6">Textured Casual Shirt</a></h3>
+              <p class="product-price">Rs. 3,990</p>
+              <a href="card.html?id=6" class="btn btn-product">Choose Options</a>
+            </div>
+          </article>
+
+          <article class="product-card"
+            data-product-id="7" data-name="Denim Everyday Shirt"
+            data-category="casual" data-price="4590" data-animate="fade-up">
+            <a href="product.html?id=7" class="product-image">
+              <img src="https://img.tkmaxx.com/medias/47040964-medium-wl-01.jpg?context=bWFzdGVyfHByb2R1Y3QtaW1hZ2VzfDczMDcwfGltYWdlL2pwZWd8YURZNUwyZ3lOUzh4TmpjeE9UQXlNelF6T1Rrd01pODBOekEwTURrMk5GOXRaV1JwZFcxZmQyeGZNREV1YW5Cbnw5NWI3M2ExNTFhYWIyZDY2MWUwYTg1ZDk1YjNkMDFiMzdlMzI3MWQyNDhlNjdlYTEyYTI1ODA1YTRlMzExMjBh"
+                alt="Blue denim casual shirt" width="450" height="550"
+                loading="lazy">
+            </a>
+            <div class="product-info">
+              <p class="product-category">Casual</p>
+              <h3><a href="product.html?id=7">Denim Everyday Shirt</a></h3>
+              <p class="product-price">Rs. 4,590</p>
+              <a href=".html?id=7" class="btn btn-product">Choose Options</a>
+            </div>
+          </article>
+
+          <article class="product-card"
+            data-product-id="8" data-name="Olive Utility Shirt"
+            data-category="casual" data-price="4190" data-animate="fade-up">
+            <a href="product.html?id=8" class="product-image">
+              <img src="https://www.jackjones.in/cdn/shop/files/902052201_g7_98b9e74b-aa05-45e1-b6cf-ee200541ac7c.jpg?v=1770350133&width=1080"
+                alt="Olive utility shirt with chest pockets"
+                width="450" height="550" loading="lazy">
+            </a>
+            <div class="product-info">
+              <p class="product-category">Casual</p>
+              <h3><a href="product.html?id=8">Olive Utility Shirt</a></h3>
+              <p class="product-price">Rs. 4,190</p>
+              <a href="product.html?id=8" class="btn btn-product">Choose Options</a>
+            </div>
+          </article>
+
+          <article class="product-card"
+            data-product-id="9" data-name="Burgundy Casual Shirt"
+            data-category="casual" data-price="3890" data-animate="fade-up">
+            <a href="product.html?id=9" class="product-image">
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSoIUt5754CRK6N0d8EIcOzhRIb6o45gNvUMlkd33Cm9PbUp76kzoovNV4&s=10"
+                alt="Burgundy casual button-up shirt"
+                width="450" height="550" loading="lazy">
+            </a>
+            <div class="product-info">
+              <p class="product-category">Casual</p>
+              <h3><a href="product.html?id=9">Burgundy Casual Shirt</a></h3>
+              <p class="product-price">Rs. 3,890</p>
+              <a href="product.html?id=9" class="btn btn-product">Choose Options</a>
+            </div>
+          </article>
+
+          <article class="product-card"
+            data-product-id="10" data-name="Navy Check Shirt"
+            data-category="casual" data-price="4090" data-animate="fade-up">
+            <a href="product.html?id=10" class="product-image">
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRX_JFmbiAqCyhLZ6AswytV7ZQ8rFfUOcAnxPmgkG9ztSRb_V0UP_XVOX99&s=10"
+                alt="Navy and white small-check casual shirt"
+                width="450" height="550" loading="lazy">
+            </a>
+            <div class="product-info">
+              <p class="product-category">Casual</p>
+              <h3><a href="product.html?id=10">Navy Check Shirt</a></h3>
+              <p class="product-price">Rs. 4,090</p>
+              <a href="product.html?id=10" class="btn btn-product">Choose Options</a>
+            </div>
+          </article>
+
+          <!-- FORMAL -->
+
+          <article class="product-card"
+            data-product-id="11" data-name="Sky Blue Formal Shirt"
+            data-category="formal" data-price="4290" data-animate="fade-up">
+            <a href="product.html?id=11" class="product-image">
+     <img src="https://uniworthshop.com/cdn/shop/files/FS1317-3RD..jpg?v=1769847509&width=900 "
+                alt="Sky blue formal shirt" width="450" height="550"
+                loading="lazy">
+            </a>
+            <div class="product-info">
+              <p class="product-category">Formal</p>
+              <h3><a href="product.html?id=11">Sky Blue Formal Shirt</a></h3>
+              <p class="product-price">Rs. 4,290</p>
+              <a href="product.html?id=11" class="btn btn-product">Choose Options</a>
+            </div>
+          </article>
+
+          <article class="product-card"
+            data-product-id="12" data-name="Black Executive Shirt"
+            data-category="formal" data-price="4690" data-animate="fade-up">
+            <a href="product.html?id=12" class="product-image">
+              <img src="https://www.oxford.com.pk/cdn/shop/files/4_a6f7407d-7e53-4f9a-a38c-410853fe2733.webp?v=1791548059"
+                alt="Black formal shirt" width="450" height="550"
+                loading="lazy">
+            </a>
+            <div class="product-info">
+              <p class="product-category">Formal</p>
+              <h3><a href="product.html?id=12">Black Executive Shirt</a></h3>
+              <p class="product-price">Rs. 4,690</p>
+              <a href="product.html?id=12" class="btn btn-product">Choose Options</a>
+            </div>
+          </article>
+
+          <article class="product-card"
+            data-product-id="13" data-name="Blue Pinstripe Shirt"
+            data-category="formal" data-price="4490" data-animate="fade-up">
+            <a href="product.html?id=13" class="product-image">
+              <img src="https://shopbrumano.com/cdn/shop/files/Blue-structured-striped-satin-formal-shirt-luxe-Brumano-Pakistan.jpg?format=webp&v=1784723891&width=1080"
+                alt="Blue pinstripe formal shirt" width="450" height="550"
+                loading="lazy">
+            </a>
+            <div class="product-info">
+              <p class="product-category">Formal</p>
+              <h3><a href="product.html?id=13">Blue Pinstripe Shirt</a></h3>
+              <p class="product-price">Rs. 4,490</p>
+              <a href="product.html?id=13" class="btn btn-product">Choose Options</a>
+            </div>
+          </article>
+
+          <article class="product-card"
+            data-product-id="14" data-name="Lavender Office Shirt"
+            data-category="formal" data-price="4190" data-animate="fade-up">
+            <a href="product.html?id=14" class="product-image">
+              <img src="https://i.pinimg.com/736x/22/cb/99/22cb99019a6d922eb1e38a1e7ab27fe5.jpg"
+                alt="Lavender formal office shirt" width="450" height="550"
+                loading="lazy">
+            </a>
+            <div class="product-info">
+              <p class="product-category">Formal</p>
+              <h3><a href="product.html?id=14">Lavender Office Shirt</a></h3>
+              <p class="product-price">Rs. 4,190</p>
+              <a href="product.html?id=14" class="btn btn-product">Choose Options</a>
+            </div>
+          </article>
+
+          <article class="product-card"
+            data-product-id="15" data-name="Grey Business Shirt"
+            data-category="formal" data-price="4390" data-animate="fade-up">
+            <a href="product.html?id=15" class="product-image">
+              <img src="https://asjalclothes.pk/cdn/shop/files/Light_Grey_Dress_Shirt-0_1080x.png?v=1776365877"
+                alt="Light grey business shirt" width="450" height="550"
+                loading="lazy">
+            </a>
+            <div class="product-info">
+              <p class="product-category">Formal</p>
+              <h3><a href="product.html?id=15">Grey Business Shirt</a></h3>
+              <p class="product-price">Rs. 4,390</p>
+              <a href="product.html?id=15" class="btn btn-product">Choose Options</a>
+            </div>
+          </article>
+
+          <article class="product-card"
+            data-product-id="16" data-name="Pink Poplin Shirt"
+            data-category="formal" data-price="4290" data-animate="fade-up">
+            <a href="product.html?id=16" class="product-image">
+              <img src="https://monark.com.pk/cdn/shop/files/RSM2620_1.jpg?v=1762262796&width=1000"
+                alt="Pale pink formal poplin shirt" width="450" height="550"
+                loading="lazy">
+            </a>
+            <div class="product-info">
+              <p class="product-category">Formal</p>
+              <h3><a href="product.html?id=16">Pink Poplin Shirt</a></h3>
+              <p class="product-price">Rs. 4,290</p>
+              <a href="product.html?id=16" class="btn btn-product">Choose Options</a>
+            </div>
+          </article>
+
+          <article class="product-card"
+            data-product-id="17" data-name="Navy Tailored Shirt"
+            data-category="formal" data-price="4790" data-animate="fade-up">
+            <a href="product.html?id=17" class="product-image">
+              <img src="https://shopbrumano.com/cdn/shop/files/NavyBlueFineTwillFormalShirt-LuxeBrumanoPakistan.jpg?format=webp&v=1756905795&width=1080"
+                alt="Navy tailored formal shirt" width="450" height="550"
+                loading="lazy">
+            </a>
+            <div class="product-info">
+              <p class="product-category">Formal</p>
+              <h3><a href="product.html?id=17">Navy Tailored Shirt</a></h3>
+              <p class="product-price">Rs. 4,790</p>
+              <a href="product.html?id=17" class="btn btn-product">Choose Options</a>
+            </div>
+          </article>
+
+          <!-- LINEN -->
+
+          <article class="product-card"
+            data-product-id="18" data-name="White Linen Shirt"
+            data-category="linen" data-price="4890" data-animate="fade-up">
+            <a href="product.html?id=18" class="product-image">
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCcWgXhaE1Wggycoa32T4yaexqoHIUPw-tqafHbOpalQ&s=10"
+                alt="White linen shirt" width="450" height="550"
+                loading="lazy">
+            </a>
+            <div class="product-info">
+              <p class="product-category">Linen</p>
+              <h3><a href="product.html?id=18">White Linen Shirt</a></h3>
+              <p class="product-price">Rs. 4,890</p>
+              <a href="product.html?id=18" class="btn btn-product">Choose Options</a>
+            </div>
+          </article>
+
+          <article class="product-card"
+            data-product-id="19" data-name="Sand Linen Shirt"
+            data-category="linen" data-price="4690" data-animate="fade-up">
+            <a href="product.html?id=19" class="product-image">
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVi8MpqWrkTk1pE9GhZimj3A_tDxnoqG8i5VxJ0WOmNM_tt2zAPgnUElHJ&s=10"
+                alt="Sand beige linen shirt" width="450" height="550"
+                loading="lazy">
+            </a>
+            <div class="product-info">
+              <p class="product-category">Linen</p>
+              <h3><a href="product.html?id=19">Sand Linen Shirt</a></h3>
+              <p class="product-price">Rs. 4,690</p>
+              <a href="product.html?id=19" class="btn btn-product">Choose Options</a>
+            </div>
+          </article>
+
+          <article class="product-card"
+            data-product-id="20" data-name="Sage Linen Shirt"
+            data-category="linen" data-price="4790" data-animate="fade-up">
+            <a href="product.html?id=20" class="product-image">
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT81OYmcGQz-_txJX1XA5pLKvGsDaCJhs2ZRv25TGuFjA&s"
+                alt="Sage green linen shirt" width="450" height="550"
+                loading="lazy">
+            </a>
+            <div class="product-info">
+              <p class="product-category">Linen</p>
+              <h3><a href="product.html?id=20">Sage Linen Shirt</a></h3>
+              <p class="product-price">Rs. 4,790</p>
+              <a href="product.html?id=20" class="btn btn-product">Choose Options</a>
+            </div>
+          </article>
+
+          <article class="product-card"
+            data-product-id="21" data-name="Navy Linen Shirt"
+            data-category="linen" data-price="4990" data-animate="fade-up">
+            <a href="product.html?id=21" class="product-image">
+              <img src="https://ivarclothing.com/cdn/shop/files/Linen_Shirt_button_down_Navy_Blue_3.jpg?v=1772801020"
+                alt="Navy blue linen shirt" width="450" height="550"
+                loading="lazy">
+            </a>
+            <div class="product-info">
+              <p class="product-category">Linen</p>
+              <h3><a href="product.html?id=21">Navy Linen Shirt</a></h3>
+              <p class="product-price">Rs. 4,990</p>
+              <a href="product.html?id=21" class="btn btn-product">Choose Options</a>
+            </div>
+          </article>
+
+          <article class="product-card"
+            data-product-id="22" data-name="Rust Linen Shirt"
+            data-category="linen" data-price="4590" data-animate="fade-up">
+            <a href="product.html?id=22" class="product-image">
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLtDogUl-TR0MfRBLthKEdztRa8PA9Hu-kuv-SNT6PFFR__YrCF3T6w5NA&s=10"
+                alt="Rust orange linen shirt" width="450" height="550"
+                loading="lazy">
+            </a>
+            <div class="product-info">
+              <p class="product-category">Linen</p>
+              <h3><a href="product.html?id=22">Rust Linen Shirt</a></h3>
+              <p class="product-price">Rs. 4,590</p>
+              <a href="product.html?id=22" class="btn btn-product">Choose Options</a>
+            </div>
+          </article>
+
+          <article class="product-card"
+            data-product-id="23" data-name="Striped Linen Shirt"
+            data-category="linen" data-price="5190" data-animate="fade-up">
+            <a href="product.html?id=23" class="product-image">
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnnLwAlpcaW_9w7i74bH1oZipfmo8FgMqCD5BzbQmgSMMvuzCR8jLTij0&s=10"
+                alt="Blue and white striped linen shirt"
+                width="450" height="550" loading="lazy">
+            </a>
+            <div class="product-info">
+              <p class="product-category">Linen</p>
+              <h3><a href="product.html?id=23">Striped Linen Shirt</a></h3>
+              <p class="product-price">Rs. 5,190</p>
+              <a href="product.html?id=23" class="btn btn-product">Choose Options</a>
+            </div>
+          </article>
+
+          <article class="product-card"
+            data-product-id="24" data-name="Charcoal Linen Shirt"
+            data-category="linen" data-price="4890" data-animate="fade-up">
+            <a href="product.html?id=24" class="product-image">
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqd5dMySuOGqAxW3920EoXlfplSV5sb4oEivyFSkE4bmZTTqCACPiDyZc&s=10"
+                alt="Charcoal grey linen shirt" width="450" height="550"
+                loading="lazy">
+            </a>
+            <div class="product-info">
+              <p class="product-category">Linen</p>
+              <h3><a href="product.html?id=24">Charcoal Linen Shirt</a></h3>
+              <p class="product-price">Rs. 4,890</p>
+              <a href="product.html?id=24" class="btn btn-product">Choose Options</a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+
+      <div class="footer-brand">
+        <a href="index.html" class="logo">Apni<span>Shirt</span></a>
+        <p>Style for every day.</p>
+        <p>Demo store — sample products and prices.</p>
+      </div>
+
+      <div class="footer-column">
+        <h2>Collection</h2>
+        <ul>
+          <li><a href="shop.html">All Shirts</a></li>
+          <li><a href="shop.html?category=casual">Casual</a></li>
+          <li><a href="shop.html?category=formal">Formal</a></li>
+          <li><a href="shop.html?category=linen">Linen</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h2>Navigation</h2>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="cart.html">Your Cart</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h2>Demo Checkout</h2>
+        <p>No real payments are processed.</p>
+      </div>
+
+    </div>
+
+   
+  </footer>
+
+  <div id="toast" class="toast" role="status" hidden></div>
+<script src="js/script.js" defer></script>
+</body>
+</html>
